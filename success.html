@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome Aboard — Cyber Starter Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>
+    // Confetti and GSAP celebration on load
+    window.addEventListener('load', () => {
+      confetti({ particleCount: 200, spread: 120, origin: { y: 0.5 }, colors: ['#58a6ff', '#238636'], scalar: 1.5 });
+      gsap.from('.hero-title', { duration: 1.2, y: 50, opacity: 0, ease: 'power3.out' });
+      gsap.from('.hero-subtitle', { duration: 1.2, y: 50, opacity: 0, ease: 'power3.out', delay: 0.3 });
+      gsap.from('.btn', { duration: 1.2, y: 50, opacity: 0, ease: 'power3.out', delay: 0.6 });
+    });
+  </script>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1 class="hero-title">Mission Accepted!</h1>
+      <p class="hero-subtitle">You're now part of Cyber Starter Academy. Head to Discord for your first challenge. Let's code the future together.</p>
+      <a href="https://discord.gg/JNfQGXgN" class="btn btn-primary">Enter the Matrix</a>
+    </div>
+  </header>
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Cyber Starter Academy. Forged for the Future.</p>
+      <p><a href="#">Terms</a> · <a href="#">Privacy</a> · <a href="#">Contact</a></p>
+      <div class="social-links">
+        <a href="https://discord.gg/JNfQGXgN" aria-label="Discord"><i class="fab fa-discord"></i></a>
+        <a href="https://twitter.com/cyberstarter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/cyberstarter" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <!-- Placeholder for Telegram social link -->
+        <!-- <a href="https://t.me/your-telegram-group" aria-label="Telegram"><i class="fab fa-telegram"></i></a> -->
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
