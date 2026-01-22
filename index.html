@@ -1,141 +1,301 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cyber Starter Academy: Master Python and Cybersecurity through immersive, hands-on projects and a vibrant community. Build real-world skills for the future of tech.">
-  <meta name="keywords" content="Python training, Cybersecurity courses, hands-on coding, beginner tech skills, Discord community, practical programming">
-  <meta property="og:title" content="Cyber Starter Academy — Python & Cybersecurity Mastery">
-  <meta property="og:description" content="Dive into practical Python and Cybersecurity with real labs, projects, and a focused community. No theory overload—just skills that matter.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://cyberstarteracademy.com"> <!-- Replace with your domain -->
-  <meta property="og:image" content="https://cyberstarteracademy.com/og-image.jpg"> <!-- Add an OG image -->
-  <title>Cyber Starter Academy — Unlock Python & Cybersecurity Skills</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Build real Python & cybersecurity skills that get you hired. Join students from 47+ countries. 7-day guarantee.">
+  <title>Cyber Starter Academy | Practical Tech Training That Pays</title>
+  <style>
+    /* ===== BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <!-- Favicon: Cyber-themed -->
-  <link rel="icon" href="favicon.ico"> <!-- Add a cyber-themed favicon, e.g., a matrix icon -->
+    :root {
+      --bg: #0a0a0f;
+      --card: #12131a;
+      --text: #f0f0ff;
+      --text-light: #a0a7c2;
+      --accent: #6366f1;
+      --accent2: #8b5cf6;
+      --success: #34d399;
+      --radius: 18px;
+      --shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    }
 
-  <!-- Fonts: Futuristic Orbitron for titles, Inter for body -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.65;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px;
+    }
 
-  <!-- Icons: Font Awesome for cyber icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    .container {
+      max-width: 760px;
+      width: 100%;
+    }
 
-  <!-- Styles: Enhanced futuristic CSS -->
-  <link rel="stylesheet" href="style.css">
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-  <!-- Dependencies: Confetti for join celebration, AOS for scroll animations, GSAP for immersive effects, Particles.js for background immersion -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+      opacity: 0;
+    }
 
-  <!-- App script (deferred) -->
-  <script defer src="script.js"></script>
+    .fade-in:nth-child(1) { animation-delay: 0.1s; }
+    .fade-in:nth-child(2) { animation-delay: 0.2s; }
+    .fade-in:nth-child(3) { animation-delay: 0.3s; }
+    .fade-in:nth-child(4) { animation-delay: 0.4s; }
+    .fade-in:nth-child(5) { animation-delay: 0.5s; }
+
+
+    /* ===== HEADER ===== */
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* ===== CARD ===== */
+    .card {
+      background: var(--card);
+      padding: 40px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    .lead {
+      text-align: center;
+      font-size: 1.3rem;
+      margin-bottom: 36px;
+      font-weight: 600;
+      color: #e0e0ff;
+    }
+
+ /* ===== SECTIONS ===== */
+    section {
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: var(--success);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2::before {
+      content: "•";
+      color: var(--accent);
+      font-size: 2rem;
+      line-height: 0;
+    }
+
+    ul {
+      padding-left: 28px;
+      color: var(--text-light);
+    }
+
+    li {
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    li::before {
+      content: "✓";
+      color: var(--success);
+      position: absolute;
+      left: -28px;
+      font-weight: bold;
+    }
+
+
+    /* ===== CTA BUTTON ===== */
+    .btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: white;
+      text-align: center;
+      padding: 18px 24px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: var(--radius);
+      margin: 36px 0;
+      transition: all 0.3s ease;
+      border: none;
+      font-family: inherit;
+      letter-spacing: -0.3px;
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.5);
+      opacity: 0.98;
+    }
+
+    /* ===== HELP TEXT ===== */
+    .help {
+      text-align: center;
+      font-size: 1rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .code {
+      display: inline-block;
+      background: rgba(99, 102, 241, 0.18);
+      color: var(--accent);
+      padding: 5px 14px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-weight: 600;
+      margin: 0 6px;
+      letter-spacing: 0.5px;
+    }
+    /* ===== SOCIAL PROOF ===== */
+    .proof {
+      text-align: center;
+      margin-top: 28px;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    .countries {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .country {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      .subtitle { font-size: 1.1rem; }
+      .card { padding: 30px 24px; }
+      .lead { font-size: 1.15rem; margin-bottom: 28px; }
+      .btn { padding: 16px; font-size: 1.2rem; }
+    }
+
+    @media (max-width: 400px) {
+      h1 { font-size: 1.9rem; }
+      .card { padding: 26px 20px; }
+    }
+  </style>
 </head>
 <body>
-  <!-- Navigation: Sticky with neon glow, subtle pulse animation -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="/" class="logo">Cyber Starter Academy</a>
-      <ul class="nav-links">
-        <li><a href="#learn">What You'll Learn</a></li>
-        <li><a href="#for">Who It's For</a></li>
-        <li><a href="#testimonials">Stories</a></li>
-        <li><a href="#join" class="btn btn-primary">Join Now</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="container">
+    <header>
+      <h1 class="fade-in">You’re Not Behind.<br>You’ve Just Been Taught Wrong.</h1>
+      <p class="subtitle fade-in">Join 1,200+ students from 47+ countries building real Python & cybersecurity skills that lead to freelance gigs and remote jobs.</p>
+    </header>
 
-  <!-- HERO: Immersive with particle background, GSAP text reveal, neon pulses -->
-  <header class="hero" data-aos="fade-in" data-aos-duration="1500">
-    <div id="particles-js" class="hero-particles"></div> <!-- Particle container for futuristic matrix rain -->
-    <div class="container">
-      <h1 class="hero-title">Ignite Your Cyber Future</h1>
-      <p class="hero-subtitle">Master Python & Cybersecurity through immersive projects, real-world labs, and a hacker-minded community. No theory—just code that conquers.</p>
-      <a class="btn btn-primary pulse" href="#join">Launch Your Journey</a>
-    </div>
-  </header>
 
-  <!-- WHAT YOU'LL LEARN: Cards with hover glow, AOS zoom -->
-  <section id="learn" class="section learn" data-aos="fade-up" data-aos-duration="1000">
-    <div class="container">
-      <h2>Skills Built for Tomorrow's Threats</h2>
-      <div class="grid grid-4">
-        <div class="card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-code icon"></i><h3>Python for Cyber Ops</h3><p>Automate scans, parse logs, and build tools used in real security workflows.</p></div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-shield-alt icon"></i><h3>Core Security Fundamentals</h3><p>Encryption, vulnerabilities, and defenses—explained practically, no jargon overload.</p></div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-project-diagram icon"></i><h3>Hands-On Projects</h3><p>Create portfolio-worthy apps like network scanners and threat simulators.</p></div>
-        <div class="card" data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-brain icon"></i><h3>Problem-Solving Mindset</h3><p>Learn to debug, adapt, and innovate like a pro hacker (the ethical kind).</p></div>
+    <main class="card">
+      <p class="lead fade-in">Most “courses” sell dreams.<br>We give you <strong>working code</strong>—on your phone.</p>
+
+      <section class="fade-in">
+        <h2>This Is For You If:</h2>
+        <ul>
+          <li>You’ve watched 10+ tutorials but still can’t write a script</li>
+          <li>You want skills that get you hired—not PDF certificates</li>
+          <li>You’re ready to build something real by next Sunday</li>
+        </ul>
+      </section>
+
+      <section class="fade-in">
+        <h2>In 3 Live Sessions, You’ll:</h2>
+        <ul>
+          <li>Automate WhatsApp messages using Python</li>
+          <li>Scan your own network safely (yes, on Android)</li>
+          <li>Build a tool you can show in interviews</li>
+        </ul>
+      </section>
+
+      <a href="https://discord.gg/NDqSftSm2X" class="btn fade-in">Join Before Next Batch Closes →</a>
+
+      <p class="help fade-in">
+        Link not working?<br>
+        Open Discord → Tap <strong>“+”</strong> → “Join a Server” → Enter:
+        <span class="code">NDqSftSm2X</span>
+      </p>
+
+      <div class="proof fade-in">
+        <p>Trusted by students from:</p>
+        <div class="countries">
+          <span class="country">🇳🇬 Nigeria</span>
+          <span class="country">🇺🇸 USA</span>
+          <span class="country">🇬🇧 UK</span>
+          <span class="country">🇨🇦 Canada</span>
+          <span class="country">+43 more</span>
+        </div>
       </div>
-    </div>
-  </section>
+    </main>
 
-  <!-- WHO IT'S FOR: Cards with flip animation -->
-  <section id="for" class="section for-who" data-aos="fade-up" data-aos-duration="1000">
-    <div class="container">
-      <h2>Designed for Aspiring Cyber Warriors</h2>
-      <div class="grid grid-3">
-        <div class="card" data-aos="flip-left" data-aos-delay="100"><i class="fas fa-user-graduate icon"></i><h3>Absolute Beginners</h3><p>Start from zero with guided, bite-sized challenges that build confidence.</p></div>
-        <div class="card" data-aos="flip-left" data-aos-delay="200"><i class="fas fa-laptop-code icon"></i><h3>Ambitious Students</h3><p>Skip certificates—gain skills that land gigs and impress employers.</p></div>
-        <div class="card" data-aos="flip-left" data-aos-delay="300"><i class="fas fa-tools icon"></i><h3>Dedicated Practitioners</h3><p>For those ready to code daily and level up through real application.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS: Slide-up with glow on hover -->
-  <section id="testimonials" class="section testimonials" data-aos="fade-up" data-aos-duration="1000">
-    <div class="container">
-      <h2>From Newbies to Ninjas: Real Stories</h2>
-      <div class="grid grid-3">
-        <div class="card" data-aos="slide-up" data-aos-delay="100"><img src="avatar1.png" alt="Alex K." class="avatar"><p class="test-quote">"Went from zero Python to building my first scanner in weeks. The community is gold!"</p><p class="test-meta">Alex K., Junior Security Analyst</p></div>
-        <div class="card" data-aos="slide-up" data-aos-delay="200"><img src="avatar2.png" alt="Sara M." class="avatar"><p class="test-quote">"No more endless tutorials. Real projects that stick—and mentors who actually help."</p><p class="test-meta">Sara M., CS Student</p></div>
-        <div class="card" data-aos="slide-up" data-aos-delay="300"><img src="avatar3.png" alt="Jordan L." class="avatar"><p class="test-quote">"Transformed my hobby into skills for a career switch. Worth every minute."</p><p class="test-meta">Jordan L., Career Changer</p></div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- JOIN: Direct Discord redirect button, fallback with code copy, placeholder for Telegram -->
-  <section id="join" class="section join" data-aos="fade-in" data-aos-duration="1200">
-    <div class="container">
-      <h2>Ready to Hack Your Potential?</h2>
-      <p class="subtitle">Join our Discord community for exclusive labs, challenges, and peer support. Click below to enter—no signups, just instant access.</p>
-      <div class="join-buttons">
-        <a id="discord-btn" href="https://discord.gg/JNfQGXgN" class="btn btn-primary">Join Discord Community</a>
-        <!-- Placeholder for Telegram: Uncomment and update href when ready -->
-        <!-- <a id="telegram-btn" href="https://t.me/your-telegram-group" class="btn btn-primary">Join Telegram Community</a> -->
-      </div>
-      <div id="message" class="message" aria-live="polite"></div>
-      <p class="fallback">If the button doesn't work (e.g., due to browser settings or no Discord app installed):</p>
-      <ol class="manual-steps">
-        <li>Open the Discord app or website.</li>
-        <li>Click the "+" icon in the server list (left sidebar) to "Add a Server".</li>
-        <li>Select "Join a Server".</li>
-        <li>Paste this invite code: <span id="invite-code" class="code">NDqSftSm2X</span></li>
-        <li>Click "Join Server" and you're in!</li>
-      </ol>
-      <button id="copy-btn" class="btn btn-outline">Copy Invite Code</button>
-      <!-- Placeholder note for Telegram steps: Add similar fallback when Telegram is ready -->
-    </div>
-  </section>
-
-  <!-- FOOTER: With socials, subtle fade -->
-  <footer class="footer" data-aos="fade-up" data-aos-duration="800">
-    <div class="container">
-      <p>© 2026 Cyber Starter Academy. Forged for the Future.</p>
-      <p><a href="#">Terms</a> · <a href="#">Privacy</a> · <a href="#">Contact</a></p>
-      <div class="social-links">
-        <a href="https://discord.gg/JNfQGXgN" aria-label="Discord"><i class="fab fa-discord"></i></a>
-        <a href="https://twitter.com/cyberstarter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="https://github.com/cyberstarter" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <!-- Placeholder for Telegram social link: Uncomment when ready -->
-        <!-- <a href="https://t.me/your-telegram-group" aria-label="Telegram"><i class="fab fa-telegram"></i></a> -->
-      </div>
-    </div>
-  </footer>
-
-  <!-- Initialize AOS -->
-  <script>AOS.init({duration: 1200, once: true, easing: 'ease-out-cubic'});</script>
+    <footer class="fade-in">
+      <p>7-day results guarantee • All payments secured via Stripe & PayPal</p>
+    </footer>
+  </div>
 </body>
 </html>
